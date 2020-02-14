@@ -172,14 +172,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="一、Tomcat服务器虚拟目录的映射方式"><a href="#一、Tomcat服务器虚拟目录的映射方式" class="headerlink" title="一、Tomcat服务器虚拟目录的映射方式"></a>一、Tomcat服务器虚拟目录的映射方式</h4><p>虚拟目录映射就是把开发好的Web应用目录交给Web服务器，供外界访问.<br>1.直接扔到webapps下<br>2.在server.xml文件的host元素中配置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context path&#x3D;&quot;&#x2F;xxx&quot; docBase&#x3D;&quot;c:\mail&quot;&#x2F;&gt;</span><br></pre></td></tr></table></figure>
-<p>这里的docBase是硬盘文件的地址，而path是写虚拟目录，访问的时候就是写虚拟目录名称<br>3.在服务器目录\conf\catalina\localhost\新建一个xml文件，文件名就是web应用的名称</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context docBase&#x3D;&quot;c:\mail&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="https://img-blog.csdnimg.cn/20200214214255142.PNG" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/2020021421431560.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTY2MDM1NQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h4 id="二、网站的配置"><a href="#二、网站的配置" class="headerlink" title="二、网站的配置"></a>二、网站的配置</h4><p>2.1 首先要有一个Web应用，即Web资源。<br>2.2 在Tomcat服务器配置一个虚拟主机(网站)，修改conf文件夹下的server.xml这个配置文件，使用Host元素进行配置。<br><img src="https://img-blog.csdnimg.cn/20200214215901967.PNG" alt="在这里插入图片描述"><br>2.3 windows系统中注册域名<br>修改”C:\Windows\System32\drivers\etc”目录下的hosts文件<br><img src="https://img-blog.csdnimg.cn/20200214215908143.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTY2MDM1NQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>2.4 使用浏览器访问<br><img src="https://img-blog.csdnimg.cn/20200214215913326.PNG?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTY2MDM1NQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h4 id="三、浏览器与服务器交互图"><a href="#三、浏览器与服务器交互图" class="headerlink" title="三、浏览器与服务器交互图"></a>三、浏览器与服务器交互图</h4><p><img src="https://img-blog.csdnimg.cn/20200214220203345.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MTY2MDM1NQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>1)浏览器根据主机名去操作系统的host文件中查找主机名对应的ip地址<br>2）浏览器如果再操作系统中没有找到相应的ip地址，则向互联网上的dns服务器查找ip地址<br>3）浏览器用找到的ip地址去链接Web服务器<br>4）浏览器连接到Web服务器后，使用http协议向服务器发送请求，即告诉Web服务器要访问服务器中的哪个Web应用下的哪个Web资源<br>5、6、7）此时浏览器等待，Web服务器就解析请求中的内容<br>8、9）Web服务器获取资源，并回读</p>
-
+        <h4 id="一、Tomcat服务器虚拟目录的映射方式"><a href="#一、Tomcat服务器虚拟目录的映射方式" class="headerlink" title="一、Tomcat服务器虚拟目录的映射方式"></a>一、Tomcat服务器虚拟目录的映射方式</h4><p>虚拟目录映射就是把开发好的Web应用目录交给Web服务器，供外界访问.
+        
+          <a class="article-more-a" href="/2020/02/14/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%92%8C%E4%BD%BF%E7%94%A8/#more">more >></a>
+        
       
 
       
