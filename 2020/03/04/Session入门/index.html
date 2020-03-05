@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title></title>
+  <title>Session入门 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="title: Session入门date: 2020-03-04 22:40:15tags:— javaweb session简介&amp;emsp;&amp;emsp;在WEB开发中，服务器可以为每个客户端浏览器创建一个session对象，默认情况下一个浏览器独占一个session对象。在实际应用当中，服务器程序可以把一些敏感数据写到用户浏览器独占的session中可以提高安全性，当用户使用浏览器访问其它程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Session入门">
+<meta property="og:url" content="http://yoursite.com/2020/03/04/Session%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name">
+<meta property="og:description" content="title: Session入门date: 2020-03-04 22:40:15tags:— javaweb session简介&amp;emsp;&amp;emsp;在WEB开发中，服务器可以为每个客户端浏览器创建一个session对象，默认情况下一个浏览器独占一个session对象。在实际应用当中，服务器程序可以把一些敏感数据写到用户浏览器独占的session中可以提高安全性，当用户使用浏览器访问其它程序">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-04T14:40:15.565Z">
+<meta property="article:modified_time" content="2020-03-05T10:13:35.910Z">
 <meta property="article:author" content="Zqy&#39;s Blog">
 <meta property="article:tag" content="杂记，java">
 <meta name="twitter:card" content="summary">
@@ -149,16 +153,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Session入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Session入门" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/04/Session%E5%85%A5%E9%97%A8/">Session入门</a>
+    <h1 class="article-title" itemprop="name">
+      Session入门
     </h1>
   
 
@@ -175,9 +177,17 @@
         <hr>
 <p>title: Session入门<br>date: 2020-03-04 22:40:15<br>tags:<br>— javaweb</p>
 <h3 id="session简介"><a href="#session简介" class="headerlink" title="session简介"></a>session简介</h3><p>&emsp;&emsp;在WEB开发中，服务器可以为每个客户端浏览器创建一个session对象，默认情况下一个浏览器独占一个session对象。在实际应用当中，服务器程序可以把一些敏感数据写到用户浏览器独占的session中可以提高安全性，当用户使用浏览器访问其它程序时，其它程序可以从用户的session中取出该用户的数据，为用户服务。  </p>
-        
-          <a class="article-more-a" href="/2020/03/04/Session%E5%85%A5%E9%97%A8/#more">more >></a>
-        
+<a id="more"></a>
+<h3 id="Session中常用的方法："><a href="#Session中常用的方法：" class="headerlink" title="Session中常用的方法："></a>Session中常用的方法：</h3><ul>
+<li>public void setAttribute(String name, Object value)该方法用于向 Session 的中放入一个键值对。  </li>
+<li>public Object getAttribute(String name)<br>该方法用于从 Session 中根据名字获取值。  </li>
+<li>public void removeAttribute(String name)<br>该方法用于从Session中删除数据。  <h3 id="Session的原理"><a href="#Session的原理" class="headerlink" title="Session的原理"></a>Session的原理</h3>&emsp;&emsp;Cookie虽然在一定程度上解决了“保持状态”的需求，但是由于Cookie本身最大支持4096字节，以及Cookie本身保存在客户端，可能被拦截或窃取，因此就需要有一种新的东西，它能支持更多的字节，并且他保存在服务器，有较高的安全性。这就是Session。  </li>
+</ul>
+<p>&emsp;&emsp;问题来了，基于HTTP协议的无状态特征，服务器根本就不知道访问者是“谁”。那么上述的Cookie就起到桥接的作用。  </p>
+<p>&emsp;&emsp;我们可以给每个客户端的Cookie分配一个唯一的id，这样用户在访问时，通过Cookie，服务器就知道来的人是“谁”。然后我们再根据不同的Cookie的id，在服务器上保存一段时间的私密资料，如“账号密码”等等。 </p>
+<p>&emsp;&emsp;总结而言：Cookie弥补了HTTP无状态的不足，让服务器知道来的人是“谁”；但是Cookie以文本的形式保存在本地，自身安全性较差；所以我们就通过Cookie识别不同的用户，对应的在Session里保存私密的信息以及超过4096字节的文本。  </p>
+<p>&emsp;&emsp;另外，上述所说的Cookie和Session其实是共通性的东西，不限于语言和框架。  </p>
+
       
 
       
@@ -188,16 +198,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/04/Session%E5%85%A5%E9%97%A8/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://better46.github.io/2020/03/04/Session%E5%85%A5%E9%97%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/24/Cookie%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Cookie学习</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -212,714 +281,56 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Cookie学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/24/Cookie%E5%AD%A6%E4%B9%A0/">Cookie学习</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/02/24/Cookie%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-02-24T14:45:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Cookie简介"><a href="#Cookie简介" class="headerlink" title="Cookie简介"></a>Cookie简介</h3><p>&emsp;&emsp;Cookie是客户端技术，程序把每个用户的数据以cookie的形式写给用户各自的浏览器。当用户使用浏览器再去访问服务器中的web资源时，就会带着各自的数据去。这样，web资源处理的就是用户各自的数据了。 </p>
-        
-          <a class="article-more-a" href="/2020/02/24/Cookie%E5%AD%A6%E4%B9%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaweb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/24/Cookie%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#session简介"><span class="toc-number">1.</span> <span class="toc-text">session简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Session中常用的方法："><span class="toc-number">2.</span> <span class="toc-text">Session中常用的方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Session的原理"><span class="toc-number">3.</span> <span class="toc-text">Session的原理</span></a></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
+  
+  
+  
 
   
-    <article id="post-HttpServletRequest" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+
+  
+  
+  
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+
+if(true){
+	var gitalk = new Gitalk({
+  	clientID: 'a3e1aeea8dba57c3ff98',
+  	clientSecret: 'ea3bd8c1c1d04c9ecbfce8cd2fbeb75723b6a02e',
+  	repo: 'better46.github.io',
+  	owner: 'better46',
+  	admin: ['better46'],
+  	id: 'Wed Mar 04 2020 22:40:15 GMT+0800',
+  	distractionFreeMode: 'true'
+})
+gitalk.render('gitalk-container') 
+}
+</script>
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/24/HttpServletRequest/">HttpServletRequest</a>
-    </h1>
-  
 
-        
-        
-<a href="/2020/02/24/HttpServletRequest/" class="archive-article-date">
-  	<time datetime="2020-02-24T03:26:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="HttpServletRequest简介"><a href="#HttpServletRequest简介" class="headerlink" title="HttpServletRequest简介"></a>HttpServletRequest简介</h3><p>&emsp;&emsp;Web服务器收到客户端的http请求，会针对每一次请求，创建一个用于代表请求的HttpServletRequest类型的request对象，并将”HTTP请求协议”的完整内容封装到该对象中。开发者获拿到request对象后就可以获取客户端发送给服务器的请求数据了。  </p>
-        
-          <a class="article-more-a" href="/2020/02/24/HttpServletRequest/#more">more >></a>
-        
-      
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaweb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/24/HttpServletRequest/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HttpServletResponse对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/20/HttpServletResponse%E5%AF%B9%E8%B1%A1/">HttpServletResponse对象</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/02/20/HttpServletResponse%E5%AF%B9%E8%B1%A1/" class="archive-article-date">
-  	<time datetime="2020-02-20T06:47:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="HttpServletResponse简介"><a href="#HttpServletResponse简介" class="headerlink" title="HttpServletResponse简介"></a>HttpServletResponse简介</h3><p>&emsp;&emsp;Web服务器收到客户端的http请求，会针对每一次请求，创建一个用于代表响应的HttpServletResponse类型的response对象，开发者可以将要向客户端返回的数据封装到response对象中。  </p>
-        
-          <a class="article-more-a" href="/2020/02/20/HttpServletResponse%E5%AF%B9%E8%B1%A1/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaweb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/20/HttpServletResponse%E5%AF%B9%E8%B1%A1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ServletConfig和ServletContext" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/17/ServletConfig%E5%92%8CServletContext/">ServletConfig和ServletContext</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/02/17/ServletConfig%E5%92%8CServletContext/" class="archive-article-date">
-  	<time datetime="2020-02-17T13:40:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="ServletConfig接口简介"><a href="#ServletConfig接口简介" class="headerlink" title="ServletConfig接口简介"></a>ServletConfig接口简介</h3><p>&emsp;&emsp;在 Servlet 接口的 init()方法中有一个参数 ServletConfig，这个参数类型是个接口，里面是一些 在 web.xml 中对当前 Servlet类的配置信息。Servlet 规范将Servlet 的配置信息全部封装到了 ServletConfig 接口对象中。在tomcat调用 init()方法时，首先会将 web.xml 中当前 Servlet 类的配置信息封装为一个对象。这个对象的类型实现ServletConfig 接口， Web 容器会将这个对象传递给init()方法中的 ServletConfig 参数。  </p>
-        
-          <a class="article-more-a" href="/2020/02/17/ServletConfig%E5%92%8CServletContext/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaweb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/17/ServletConfig%E5%92%8CServletContext/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-servlet入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/16/servlet%E5%85%A5%E9%97%A8/">Servlet入门</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/02/16/servlet%E5%85%A5%E9%97%A8/" class="archive-article-date">
-  	<time datetime="2020-02-16T15:08:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="Servlet简介"><a href="#Servlet简介" class="headerlink" title="Servlet简介"></a>Servlet简介</h3><p>&emsp;&emsp;Servlet是sun公司提供的一门用于开发动态web资源的技术.<br>&emsp;&emsp;Sun公司在其API中提供了一个servlet接口.Servlet是可以运行在Web服务器中的小型Java程序，有时也叫做服务器端的小应用程序，servlet是server applet两个单词的组合而成。servlet 可以通过 HTTP协议接收和响应来自 Web 客户端的请求。 </p>
-        
-          <a class="article-more-a" href="/2020/02/16/servlet%E5%85%A5%E9%97%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaweb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/16/servlet%E5%85%A5%E9%97%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-http协议" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/15/http%E5%8D%8F%E8%AE%AE/">http协议</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/02/15/http%E5%8D%8F%E8%AE%AE/" class="archive-article-date">
-  	<time datetime="2020-02-15T06:33:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="http协议简介"><a href="#http协议简介" class="headerlink" title="http协议简介"></a>http协议简介</h3><p>&emsp;&emsp;HTTP是HyperText Transfer Protocol(超文本传输协议)的简写，可以传输HTML文件、图片等文件。用于定义WEB浏览器与WEB服务器之间交换数据的过程及数据本身的格式，基于TCP/IP的高级协议，特点如下:</p>
-        
-          <a class="article-more-a" href="/2020/02/15/http%E5%8D%8F%E8%AE%AE/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaweb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/15/http%E5%8D%8F%E8%AE%AE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Tomcat服务器的学习和使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/14/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%92%8C%E4%BD%BF%E7%94%A8/">Tomcat服务器的学习和使用</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/02/14/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%92%8C%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-02-14T13:17:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、Tomcat服务器虚拟目录的映射方式"><a href="#一、Tomcat服务器虚拟目录的映射方式" class="headerlink" title="一、Tomcat服务器虚拟目录的映射方式"></a>一、Tomcat服务器虚拟目录的映射方式</h3><p>虚拟目录映射就是把开发好的Web应用目录交给Web服务器，供外界访问.</p>
-        
-          <a class="article-more-a" href="/2020/02/14/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%92%8C%E4%BD%BF%E7%94%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaweb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/14/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%AD%A6%E4%B9%A0%E5%92%8C%E4%BD%BF%E7%94%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Tomcat服务器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/07/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8/">Tomcat服务器</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/02/07/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2020-02-07T14:35:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1、疑问：学习web开发，为什么必须要先装一个WEB服务器？"><a href="#1、疑问：学习web开发，为什么必须要先装一个WEB服务器？" class="headerlink" title="1、疑问：学习web开发，为什么必须要先装一个WEB服务器？"></a>1、疑问：学习web开发，为什么必须要先装一个WEB服务器？</h3><p>&emsp;&emsp;在本地计算机上随便创建一个web页面，用户是无法访问到的，但是如果启动tomcat服务器，把web页面放在tomcat服务器中，用户就可以访问了。这说明什么问题？<br>
-        
-          <a class="article-more-a" href="/2020/02/07/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">javaweb</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/07/Tomcat%E6%9C%8D%E5%8A%A1%E5%99%A8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-我的软件设计师之旅" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/02/01/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88%E4%B9%8B%E6%97%85/">我的软件设计师之旅</a>
-    </h1>
-  
-
-        
-        
-<a href="/2020/02/01/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88%E4%B9%8B%E6%97%85/" class="archive-article-date">
-  	<time datetime="2020-02-01T09:32:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a><strong>前言</strong></h4><p>一直想写一篇总结，终于闲来无事。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">当你想要某种东西时，整个宇宙会合力助你实现愿望。</span><br></pre></td></tr></table></figure>
-<ul>
-<li>世界是物质的，物质是客观存在的。</li>
-<li>唯物辩证法是根本办法.<br><br>
-        
-          <a class="article-more-a" href="/2020/02/01/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88%E4%B9%8B%E6%97%85/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">经验</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/02/01/%E6%88%91%E7%9A%84%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88%E4%B9%8B%E6%97%85/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -942,8 +353,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
